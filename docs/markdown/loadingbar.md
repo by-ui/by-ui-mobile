@@ -7,7 +7,7 @@
 
 因为可复用性的关系，`LoadingBar` 只会全局创建一个实例，而且在 `Vue.prototype` 中添加了全局对象 `$loadingBar`，可以直接通过 `this.$loadingBar` 操作实例
 
-## 基础用法
+### 基础用法
 
 通过调用 `$loadingBar` 提供的三种方法来控制全局的加载进度条 `start()`、`finish()`、`error()`
 
@@ -41,7 +41,7 @@
 :::
 
 
-## LoadingBar 函数方法
+### LoadingBar 函数方法
 
 | 函数名      | 说明          | 参数      |
 |---------- |-------------- |---------- |
@@ -50,7 +50,7 @@
 | error | 显示错误类型的进度条 | - |
 | update | 指定进度的百分比，更新进度条 | percent，指定进度的百分比 |
 
-## LoadingBar 配置
+### LoadingBar 配置
 
 提供 `LoadingBar` 的全局配置，使用方法如下：
 
@@ -83,7 +83,7 @@ this.$loadingBar.config(new LoadingBarOption(
 ```
 :::
 
-## LoadingBar 参数
+### LoadingBar 参数
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |

@@ -2,7 +2,7 @@
 
 ----
 
-## 简单的表单
+### 简单的表单
 
 :::demo
 ```html
@@ -32,7 +32,7 @@
 :::
 
 
-## 设置label内容及宽度
+### 设置label内容及宽度
 
 :::demo
 ```html
@@ -75,7 +75,7 @@
 
 
 
-## 设置label-postion
+### 设置label-postion
 
 :::demo
 ```html

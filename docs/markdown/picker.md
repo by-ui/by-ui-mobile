@@ -1,119 +1,93 @@
-# picker 按钮
+# picker 弹窗
 
 ---
 
-## 带颜色倾向的按钮
+基于v-model双向绑定执行是否打开picker
 
-带有色彩倾向的按钮能给用户带来操作提示
+### 默认状态
 
 :::demo
 
 ```html
+<div>打开状态：{{checkboxValue}}</div>
+
 <div class="row">
-    <by-picker v-model="checkboxValue1">picker</by-picker>
+    <by-picker v-model="checkboxValue"></by-picker>
+    <by-button type="primary" @click="checkboxValue=true">打开picker</by-button>
+</div>
+```
+
+:::
+
+### 带 slot 状态
+
+:::demo
+
+```html
+<div>打开状态：{{checkboxValue1}}</div>
+
+<div class="row">
+    <by-picker v-model="checkboxValue1">picker-slot</by-picker>
     <by-button type="primary" @click="checkboxValue1=true"
         >打开picker</by-button
     >
-    <by-button type="success">成功按钮</by-button>
-    <by-button type="error">危险按钮</by-button>
-    <by-button type="warning">警告按钮</by-button>
-    <by-button type="info">信息按钮</by-button>
-</div>
-<div class="row">
-    <by-button plain>默认按钮</by-button>
-    <by-button type="primary" plain>主要按钮</by-button>
-    <by-button type="success" plain>成功按钮</by-button>
-    <by-button type="error" plain>危险按钮</by-button>
-    <by-button type="warning" plain>警告按钮</by-button>
-    <by-button type="info" plain>信息按钮</by-button>
-</div>
-<div class="row">
-    <by-button round>默认按钮</by-button>
-    <by-button type="primary" round>主要按钮</by-button>
-    <by-button type="success" round>成功按钮</by-button>
-    <by-button type="error" round>危险按钮</by-button>
-    <by-button type="warning" round>警告按钮</by-button>
-    <by-button type="info" round>信息按钮</by-button>
 </div>
 ```
 
 :::
 
-## 不可用状态按钮
+### 带 title 状态
 
-添加属性 `disabled` 禁用按钮
 :::demo
 
 ```html
+<div>打开状态：{{checkboxValue2}}</div>
+
 <div class="row">
-    <by-button type="primary" disabled>主要按钮</by-button>
-    <by-button hollow disabled>次要按钮</by-button>
-    <by-button type="text" disabled>文字按钮</by-button>
+    <by-picker v-model="checkboxValue2" :title="'title'"></by-picker>
+    <by-button type="primary" @click="checkboxValue2=true"
+        >打开picker</by-button
+    >
 </div>
 ```
 
 :::
 
-## 图标按钮
+### 回调方法
 
-添加属性 `icon` 渲染图标按钮
 :::demo
 
 ```html
+<div>打开状态：{{checkboxValue1}}</div>
+<div>点击状态：{{text}}</div>
+
 <div class="row">
-    <by-button icon="icon-edit" circle></by-button>
-    <by-button type="primary" icon="icon-edit" circle></by-button>
-    <by-button type="success" icon="icon-edit" circle></by-button>
-    <by-button type="error" icon="icon-edit" circle></by-button>
-    <by-button type="warning" icon="icon-edit" circle></by-button>
-    <by-button type="info" icon="icon-edit" circle></by-button>
+    <by-picker
+        v-model="checkboxValue1"
+        @confirm="()=>{text='点击了完成'}"
+        @cancel="()=>{text='点击了取消'}"
+        >picker-slot</by-picker
+    >
+    <by-button type="primary" @click="checkboxValue1=true"
+        >打开picker</by-button
+    >
 </div>
 ```
 
 :::
 
-`loading` 按钮
-:::demo
+## Slot 参数
 
-```html
-<by-button loading circle></by-button> <by-button loading>加载中</by-button>
-```
+| 参数  | 说明 | 类型   | 可选值 | 默认值 |
+| ----- | ---- | ------ | ------ | ------ |
+| title | 标题 | String | -      | -      |
 
-:::
+## 方法
 
-### 不同尺寸
-
-Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
-:::demo
-
-```html
-<div>
-    <by-button type="primary" size="large">变大按钮</by-button>
-    <by-button type="primary">正常按钮</by-button>
-    <by-button type="primary" size="small">变小按钮</by-button>
-    <by-button type="primary" size="smaller">超小按钮</by-button>
-</div>
-<div style="margin-top: 20px;">
-    <by-button icon="icon-edit" circle size="large"></by-button>
-    <by-button icon="icon-edit" circle></by-button>
-    <by-button icon="icon-edit" circle size="small"></by-button>
-    <by-button icon="icon-edit" circle size="smaller"></by-button>
-</div>
-```
-
-:::
-
-## Button 参数
-
-| 参数       | 说明                                   | 类型    | 可选值                                                        | 默认值   |
-| ---------- | -------------------------------------- | ------- | ------------------------------------------------------------- | -------- |
-| type       | 按钮的类型                             | String  | `default` `primary` `success` `error` `warning` `info` `text` | -        |
-| nativeType | 原生按钮的类型                         | String  | -                                                             | `button` |
-| size       | 按钮的大小                             | String  | `large`, `small`, `smaller`                                   | -        |
-| hollow     | 是否为空心按钮                         | Boolean | -                                                             | false    |
-| icon       | 按钮的图标类名，填入图标的 `classname` | String  | 见文档 `Icon 图标`                                            | -        |
-| loading    | 设置按钮的载入状态                     | Boolean | -                                                             | false    |
-| circle     | 设置圆形图标按钮                       | Boolean | -                                                             | false    |
+| 参数    | 说明         | 类型     | 可选值 | 默认值 |
+| ------- | ------------ | -------- | ------ | ------ |
+| confirm | 点击完成回调 | Function | -      | -      |
+| cancel  | 点击取消回调 | Function | -      | -      |
 
 <script lang="ts">
  import { Vue, Component } from "vue-property-decorator";
@@ -121,18 +95,16 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
  @Component
  export default class MyComponent extends Vue {
 
+     checkboxValue = false;
      checkboxValue1 = false;
-
      checkboxValue2 = false;
-
-     checkboxValue3 = true;
-
-     checkboxValue4 = ['上海','香港'];
+     checkboxValue3 = false;
 
  }
 </script>
 <style lang="scss" scoped>
     .row {
+        margin-top:10px;
         display:flex;
         button {
             margin-left: 8px;

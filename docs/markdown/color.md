@@ -5,7 +5,7 @@
 
 {{$t('by.color.colorDesc')}}
 
-## {{$t('by.color.themeColor')}}
+### {{$t('by.color.themeColor')}}
 
 {{$t('by.color.themeColorDesc')}}
 
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-## 辅助色
+### 辅助色
 
 用于标识状态的按钮等
 
@@ -50,7 +50,7 @@
   </div>
 </div>
 
-## 次辅助色
+### 次辅助色
 
 用于不那么重要的信息等
 
@@ -81,7 +81,7 @@
   </div>
 </div>
 
-## 中性色
+### 中性色
 
 用于文本、背景和边框
 
@@ -130,7 +130,7 @@
   </div>
 </div>
 
-## 调色板
+### 调色板
 
 为了更灵活的进行颜色搭配，我们参考了 [Material Design Color Palette](https://material.io/guidelines/style/color.html#color-color-palette) ，使用上述提到的 `品牌色` 和 `辅助色` 作为主色，形成一条条完整的渐变色板。主色使用 `500` 色号
 

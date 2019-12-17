@@ -35,7 +35,7 @@
         table {
             display: none !important;
         }
-        h2:nth-last-child(2) {
+        h2{
             display: none !important;
         }
     }

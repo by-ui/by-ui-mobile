@@ -1,6 +1,6 @@
 # Grid 栅格
 
-----
+---
 
 ## 概述
 
@@ -14,62 +14,78 @@
 
 该栅格系统使用 `Flexbox` 实现，支持 `Flex` 布局，允许子元素在父节点内的水平对齐方式（居左，居中，居右）等
 
-
 ## 屏幕 Breakpoint
 
 参考 [Bootstrap](http://getbootstrap.com/css/#grid-media-queries) 和 [Semantic UI](https://semantic-ui.com/elements/container.html)，`by-UI` 选用了如下 `Breakpoint`
 
-| Breakpoint | 设备类型 |
-| :--: | :--: |
-| 480px | Mobile |
-| 768px | Tablet |
-| 992px | Desktop |
-| 1200px | Wide Desktop |
+| Breakpoint |   设备类型   |
+| :--------: | :----------: |
+|   480px    |    Mobile    |
+|   768px    |    Tablet    |
+|   992px    |   Desktop    |
+|   1200px   | Wide Desktop |
 
-## 基础栅格
+### 基础栅格
 
 使用单一的 `row` 和多个 `col` 组合，创建基础的栅格布局
 
 :::demo
+
 ```html
 <div class="row by-row no-gutter" v-for="n in 24/2">
-    <div :class="`col-md-${n}`"><div class="by-box-row bg-c-brand-dark"></div></div>
-    <div :class="`col-md-${24 - n}`"><div class="by-box-row bg-c-brand-light"></div></div>
+    <div :class="`col-md-${n}`">
+        <div class="by-box-row bg-c-brand-dark"></div>
+    </div>
+    <div :class="`col-md-${24 - n}`">
+        <div class="by-box-row bg-c-brand-light"></div>
+    </div>
 </div>
 ```
+
 :::
 
-## 分隔布局
+### 分隔布局
 
 `col` 块之间增加间隔，默认添加间隔，如不需要间隔，可添加 `class="no-gutter"`
 
 :::demo
+
 ```html
 <div class="row by-row" v-for="n in 24/2">
-    <div :class="`col-md-${n}`"><div class="by-box-row bg-c-brand-dark"></div></div>
-    <div :class="`col-md-${24 - n}`"><div class="by-box-row bg-c-brand-light"></div></div>
+    <div :class="`col-md-${n}`">
+        <div class="by-box-row bg-c-brand-dark"></div>
+    </div>
+    <div :class="`col-md-${24 - n}`">
+        <div class="by-box-row bg-c-brand-light"></div>
+    </div>
 </div>
 ```
+
 :::
 
-## 左右偏移
+### 左右偏移
 
 列与列之间可以通过设置 `offset` 来设定偏移值，例如：`col-md-offset-3`，意思是向左偏移 3 个单元格
 
 :::demo
+
 ```html
 <div class="row by-row" v-for="n in 6">
     <div class="col-md-2"><div class="by-box-row bg-c-brand-dark"></div></div>
-    <div :class="`col-md-2 col-md-offset-${n}`"><div class="by-box-row bg-c-brand-dark"></div></div>
+    <div :class="`col-md-2 col-md-offset-${n}`">
+        <div class="by-box-row bg-c-brand-dark"></div>
+    </div>
 </div>
 ```
+
 :::
 
-## Flex 布局
+### Flex 布局
 
 `by-UI` 的 `Grid System` 就是使用 `Flexbox` 实现的，如果要针对某些元素设置 `Flex` 布局，可使用 `class="flex"`。子元素通过添加不同的值 `flex-start`，`flex-center`，`flex-end`，`flex-top`，`flex-middle`，`flex-around`，`flex-between` ，分别定义其在父元素中的排列方式。
 
 :::demo
+
 ```html
 <p class="demo-desc">flex-start</p>
 <div class="row by-row no-gutter">
@@ -107,49 +123,69 @@
     <div class="col-md-4"><div class="by-box-row bg-c-brand-light"></div></div>
 </div>
 ```
+
 :::
 
-
-## 栅格列的对齐方式
+### 栅格列的对齐方式
 
 `row` 中的子元素 `col` 的对齐方式，支持三种对齐方式：`flex-top`，`flex-middle`，`flex-bottom`
 
 :::demo
+
 ```html
 <p class="demo-desc">flex-top</p>
 <div class="row by-row flex-center">
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 100px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark" style="height: 70px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 120px"></div></div>
+    <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 100px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-dark" style="height: 70px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 120px"></div>
+    </div>
 </div>
 <p class="demo-desc">flex-middle</p>
 <div class="row by-row flex-center flex-middle">
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 100px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark" style="height: 70px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 120px"></div></div>
+    <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 100px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-dark" style="height: 70px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 120px"></div>
+    </div>
 </div>
 <p class="demo-desc">flex-bottom</p>
 <div class="row by-row flex-center flex-bottom">
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 100px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-dark" style="height: 70px"></div></div>
-  <div class="col-md-4"><div class="by-box-row bg-c-brand-light" style="height: 120px"></div></div>
+    <div class="col-md-4"><div class="by-box-row bg-c-brand-dark"></div></div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 100px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-dark" style="height: 70px"></div>
+    </div>
+    <div class="col-md-4">
+        <div class="by-box-row bg-c-brand-light" style="height: 120px"></div>
+    </div>
 </div>
 ```
+
 :::
 
 ## 类名说明
 
-| classname | 说明 |
-| :------- | :--- |
-| .container | Grid 容器，相对父容器居中对齐 |
-| .container-fluid | 容器左右两边预留 `24px` 的间隙 |
-| .no-gutter | 默认 `col` 之间会设置 `8px` 的间隔，添加此类名可去除默认的间隔 |
-| .row | 包裹 `col` 的容器 |
-| .row.reverse | 反向排列子元素 |
-| .flex | 使用 `flexbox` 布局 |
+| classname        | 说明                                                           |
+| :--------------- | :------------------------------------------------------------- |
+| .container       | Grid 容器，相对父容器居中对齐                                  |
+| .container-fluid | 容器左右两边预留 `24px` 的间隙                                 |
+| .no-gutter       | 默认 `col` 之间会设置 `8px` 的间隔，添加此类名可去除默认的间隔 |
+| .row             | 包裹 `col` 的容器                                              |
+| .row.reverse     | 反向排列子元素                                                 |
+| .flex            | 使用 `flexbox` 布局                                            |
 
 <style lang="scss" scoped>
   .row {
