@@ -28,6 +28,9 @@ export default {
             colorDesc: '统一的色彩搭配可以提高品牌的识别度，色彩的运用除了需要考虑品牌的统一性之外，还需要达到信息传递，交互反馈等目的。BY-UI 是BY实验室出品，品牌颜色为【BY蓝】，因此 BY-UI 的整体配色风格也是基于【BY蓝】展开的。',
         },
         nav: {
+            mobile: '移动组件',
+            picker: 'Picker 弹窗',
+
             color: '色彩',
             font: '字体',
             brand: '品牌',

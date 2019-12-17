@@ -15,6 +15,10 @@ components:
       - title: component
         name: Components
         groups:
+              - title: mobile
+                items:
+                      - title: picker
+                        name: Picker
               - title: baseComponent
                 items:
                       - title: button

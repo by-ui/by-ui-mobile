@@ -1,3 +1,5 @@
+/********** 移动端 **********/
+import Picker from './components/picker';
 
 /********** 基础组件 **********/
 import Button from './components/button';
@@ -59,6 +61,8 @@ import MenuItemGroup from './components/menu-item-group';
 import Submenu from './components/menu-sub';
 
 function install(Vue: any, opts = {}) {
+    Vue.component('by-picker', Picker);
+
     Vue.component('by-button', Button);
     Vue.component('by-button-group', ButtonGroup);
 

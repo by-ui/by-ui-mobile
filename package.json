@@ -13,7 +13,7 @@
     "build": "node build/inquirer/index.ts && cross-env CUSTOMIZE=true"
   },
   "author": {
-    "name": "ZhouHengYi, XiaoKangZheng, LianjieXu, LiuCheng",
+    "name": "ZhouHengYi, XiaoKangZheng, LianjieXu, LiuCheng, Caiqi",
     "email": "262767665@qq.com"
   },
   "repository": {
