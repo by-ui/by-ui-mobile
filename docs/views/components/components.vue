@@ -9,21 +9,30 @@
                     <router-view></router-view>
                 </transition>
             </div>
+            <!-- 展示 -->
             <iframe class="fix_show"
-                    src="#/mobile/picker"
+                    :src="'#/mobile/'+src"
                     frameborder="0"></iframe>
         </div>
         <by-footer></by-footer>
     </div>
 </template>
 <script lang="ts">
-    import { Vue, Component } from "vue-property-decorator";
+    import { Vue, Component, Watch } from "vue-property-decorator";
     import navsConfig from '@docs/vue-router/nav.config.yml'
 
     @Component
     export default class Components extends Vue {
+        @Watch('$route')
+        router(from: any) {
+            this.src = String(from.name)
+        }
 
+        private src: string = ''
         navs = navsConfig.components;
+        created() {
+            this.src = String(this.$route.name)
+        }
     }
 </script>
 
@@ -34,8 +43,8 @@
         right: 80px;
         top: 100px;
         width: 320px;
-        padding: 20px;
+        height: 600px;
         background-color: #fff;
-        border:1px solid #eee;
+        border: 1px solid #eee;
     }
 </style>

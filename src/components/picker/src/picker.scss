@@ -3,10 +3,10 @@ $act-color: rgba(252, 115, 1, 1);
 $def-color: rgba(0, 0, 0, 1);
 $mod-back: rgba(0, 0, 0, 0.4);
 
-
 .picker_box {
     position: fixed;
     top: 0;
+    left: 0;
     bottom: 0;
     width: 100%;
     z-index: 998;
@@ -46,7 +46,7 @@ $mod-back: rgba(0, 0, 0, 0.4);
         padding: 34px;
     }
 }
-// ------------------------ 动画 ------------------------ 
+// ------------------------ 动画 ------------------------
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.5s;

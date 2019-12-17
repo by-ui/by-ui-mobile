@@ -68,7 +68,6 @@ module.exports = {
                                 [MarkdownItContainer, 'demo', {
                                     validate: params => params.trim().match(/^demo\s*(.*)$/),
                                     render: (tokens, idx) => {
-                                        console.log(tokens)
                                         if (tokens[idx].nesting === 1) {
                                             const html = utils.convertHtml(striptags(tokens[idx + 1].content, 'script'))
                                             return `<demo-box>

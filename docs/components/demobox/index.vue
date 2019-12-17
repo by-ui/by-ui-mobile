@@ -10,10 +10,10 @@
                       @success="handleCopySuccess"><i class="icon icon-clipboard"></i></span>
             </div>
         </collapse-transition>
-        <div class="by-component__show">
+        <div v-else
+             class="by-component__show">
             <slot name="demo"></slot>
         </div>
-        <div></div>
         <!-- <iframe src="#/components/picker" frameborder="0"></iframe> -->
         <!-- <a class="by-component__code-toggle"
            @click="isShow = !isShow">{{ isShow ? '隐藏代码' : '显示代码' }}</a> -->
@@ -30,11 +30,14 @@
         }
     })
     export default class DemoBox extends Vue {
-        private mobile = true
+        private mobile = false
         created() {
-            console.log(this.$route)
+            if (this.$route.path.indexOf('/mobile/')) {
+                this.mobile = true
+            }
         }
-        isShow = false;
+        beforeMount() {
+        }
 
         handleCopySuccess(evt) {
             this.$message.success(`Code copied.`)
