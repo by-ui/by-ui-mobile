@@ -17,7 +17,11 @@
 </script>
 <style lang="scss">
     .mobile {
+        padding-top: 30px;
         .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
             line-height: 30px;
             background-color: #eee;
             text-align: center;

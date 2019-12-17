@@ -72,8 +72,7 @@
         flex: 1;
     }
     .by-component__show {
-        margin-left: 10px;
-        padding: 20px;
+        padding: 15px;
         width: 320px;
         border: 1px solid #eee;
     }

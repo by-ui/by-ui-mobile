@@ -11,7 +11,9 @@
 ```html
 <div class="row">
     <by-picker v-model="checkboxValue1">picker</by-picker>
-    <by-button type="primary">主要按钮</by-button>
+    <by-button type="primary" @click="checkboxValue1=true"
+        >打开picker</by-button
+    >
     <by-button type="success">成功按钮</by-button>
     <by-button type="error">危险按钮</by-button>
     <by-button type="warning">警告按钮</by-button>
@@ -119,7 +121,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
  @Component
  export default class MyComponent extends Vue {
 
-     checkboxValue1 = true;
+     checkboxValue1 = false;
 
      checkboxValue2 = false;
 
@@ -131,15 +133,10 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 </script>
 <style lang="scss" scoped>
     .row {
-        .by-btn + .by-btn {
+        display:flex;
+        button {
             margin-left: 8px;
-        }
-
-        & + .row {
-            margin-top: 20px;
-        }
-        .by-btn-group .by-btn {
-            margin-left: 0;
+            margin-bottom: 8px;
         }
     }
 

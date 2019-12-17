@@ -10,9 +10,12 @@
                 </transition>
             </div>
             <!-- 展示 -->
-            <iframe class="fix_show"
-                    :src="'#/mobile/'+src"
-                    frameborder="0"></iframe>
+            <VueDragResize :isActive="true"
+                           :isResizable="false">
+                <iframe class="fix_show"
+                        :src="'#/mobile/'+src"
+                        frameborder="0"></iframe>
+            </VueDragResize>
         </div>
         <by-footer></by-footer>
     </div>
@@ -20,8 +23,9 @@
 <script lang="ts">
     import { Vue, Component, Watch } from "vue-property-decorator";
     import navsConfig from '@docs/vue-router/nav.config.yml'
+    import VueDragResize from "@docs/utils/vue-drag-resize/vue-drag-resize.vue";
 
-    @Component
+    @Component({ components: { VueDragResize } })
     export default class Components extends Vue {
         @Watch('$route')
         router(from: any) {
@@ -39,12 +43,15 @@
 
 <style scoped>
     .fix_show {
-        position: fixed;
+        /* position: fixed; */
         right: 80px;
         top: 100px;
         width: 320px;
         height: 600px;
         background-color: #fff;
         border: 1px solid #eee;
+    }
+    .vdr.active:before {
+        /* outline: none; */
     }
 </style>

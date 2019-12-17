@@ -27,15 +27,15 @@ $mod-back: rgba(0, 0, 0, 0.4);
     z-index: 999;
     background: #fff;
     .title {
-        padding: 0 28px;
-        height: 84px;
+        padding: 0 14px;
+        height: 42px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid $boder-color;
         box-shadow: 0px 1px 0px 0px $boder-color;
         span {
-            font-size: 34px;
+            font-size: 16px;
             color: $act-color;
             &:nth-child(2) {
                 color: $def-color;
@@ -43,7 +43,7 @@ $mod-back: rgba(0, 0, 0, 0.4);
         }
     }
     .content {
-        padding: 34px;
+        padding: 16px;
     }
 }
 // ------------------------ 动画 ------------------------
@@ -63,8 +63,8 @@ $mod-back: rgba(0, 0, 0, 0.4);
 }
 @-webkit-keyframes fadeInUpBig {
     from {
-        -webkit-transform: translate3d(0, 2000px, 0);
-        transform: translate3d(0, 2000px, 0);
+        -webkit-transform: translate3d(0, 1000px, 0);
+        transform: translate3d(0, 1000px, 0);
     }
 
     to {
@@ -75,8 +75,8 @@ $mod-back: rgba(0, 0, 0, 0.4);
 
 @keyframes fadeInUpBig {
     from {
-        -webkit-transform: translate3d(0, 2000px, 0);
-        transform: translate3d(0, 2000px, 0);
+        -webkit-transform: translate3d(0, 1000px, 0);
+        transform: translate3d(0, 1000px, 0);
     }
 
     to {
