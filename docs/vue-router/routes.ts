@@ -35,11 +35,13 @@ Object.keys(NavConfig).forEach((parent: string, index: number) => {
         )
     );
 
+
     // 遍历子路由
     NavConfig[parent].forEach((item: any) => {
         const _itemName = item.name.toLowerCase();
         // 有组的情况
         if (item.groups) {
+            console.log(item)
             item.groups.forEach(group => {
                 group.items.forEach(item => {
 
@@ -67,10 +69,29 @@ Object.keys(NavConfig).forEach((parent: string, index: number) => {
         }
     })
 })
+
+
+routes.push(
+    new Route(
+        'mobile',
+        () => import(/* webpackChunkName: "modules/[request]" */ `../views/mobile/mobile.vue`),
+        `/mobile`,
+        undefined,
+    )
+);
+
 routes.push({
     path: '/',
     name: 'home',
     component: () => import(/* webpackChunkName: "modules/home" */ `../views/index/index.vue`)
 })
+
+routes[1].children.map((v: any) => {
+    routes[2].children.push({
+        ...v,
+        name: 'm' + v.name
+    })
+})
+console.log(routes)
 
 export default routes
