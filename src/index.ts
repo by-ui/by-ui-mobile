@@ -1,5 +1,6 @@
 /********** 移动端 **********/
 import Picker from './components/picker';
+import PickerTime from './components/picker-time';
 
 /********** 基础组件 **********/
 import Button from './components/button';
@@ -61,7 +62,9 @@ import MenuItemGroup from './components/menu-item-group';
 import Submenu from './components/menu-sub';
 
 function install(Vue: any, opts = {}) {
+
     Vue.component('by-picker', Picker);
+    Vue.component('by-picker-time', PickerTime);
 
     Vue.component('by-button', Button);
     Vue.component('by-button-group', ButtonGroup);
@@ -133,3 +136,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 const verion = 'v.0.0.3'
 export { verion, install, Message, Button, Modal }
 // export default { verion, install, Message, Button }
+
+

@@ -30,6 +30,7 @@ export default {
         nav: {
             mobile: '移动组件',
             picker: 'Picker 弹窗',
+            pickerTime: 'PickerTime 弹窗',
 
             color: '色彩',
             font: '字体',

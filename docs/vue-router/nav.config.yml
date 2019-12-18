@@ -19,6 +19,8 @@ components:
                 items:
                       - title: picker
                         name: Picker
+                      - title: pickerTime
+                        name: PickerTime
               - title: baseComponent
                 items:
                       - title: button

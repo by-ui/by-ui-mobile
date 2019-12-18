@@ -539,7 +539,6 @@ export default {
 
     computed: {
         style() {
-            console.log('this.height', this.height)
             return {
                 top: this.top + 'px',
                 left: this.left + 'px',

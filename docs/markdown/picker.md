@@ -94,7 +94,7 @@
 
  @Component
  export default class MyComponent extends Vue {
-
+     text='未点击'
      checkboxValue = false;
      checkboxValue1 = false;
      checkboxValue2 = false;
