@@ -83,14 +83,14 @@ export default {
         },
         x: {
             type: Number,
-            default: window.innerWidth - 500,
+            default: window.innerWidth - 400,
             validator: function (val) {
                 return typeof val === 'number'
             }
         },
         y: {
             type: Number,
-            default: 200,
+            default: window.innerHeight / 2,
             validator: function (val) {
                 return typeof val === 'number'
             }
@@ -144,7 +144,8 @@ export default {
             right: null,
             bottom: null,
             minWidth: this.minw,
-            minHeight: this.minh
+            minHeight: this.minh,
+            height: this.h
         }
     },
 
@@ -175,15 +176,16 @@ export default {
         this.rawRight = this.parentWidth - this.rawWidth - this.rawLeft;
         this.rawBottom = this.parentHeight - this.rawHeight - this.rawTop;
 
-        document.documentElement.addEventListener('mousemove', this.move);
-        document.documentElement.addEventListener('mouseup', this.up);
-        document.documentElement.addEventListener('mouseleave', this.up);
+        const VDR = this.$refs.vdr
+        VDR.addEventListener('mousemove', this.move);
+        VDR.addEventListener('mouseup', this.up);
+        VDR.addEventListener('mouseleave', this.up);
 
-        document.documentElement.addEventListener('mousedown', this.deselect);
+        VDR.addEventListener('mousedown', this.deselect);
 
-        document.documentElement.addEventListener('touchmove', this.move, true);
-        document.documentElement.addEventListener('touchend touchcancel', this.up, true);
-        document.documentElement.addEventListener('touchstart', this.up, true);
+        VDR.addEventListener('touchmove', this.move, true);
+        VDR.addEventListener('touchend touchcancel', this.up, true);
+        VDR.addEventListener('touchstart', this.up, true);
 
         if (this.dragHandle) {
             let dragHandles = Array.prototype.slice.call(this.$el.querySelectorAll(this.dragHandle));
@@ -207,13 +209,14 @@ export default {
 
         document.documentElement.removeEventListener('mousedown', this.deselect);
 
-        document.documentElement.removeEventListener('touchmove', this.move, true);
-        document.documentElement.removeEventListener('touchend touchcancel', this.up, true);
-        document.documentElement.removeEventListener('touchstart', this.up, true);
+        // document.documentElement.removeEventListener('touchmove', this.move, true);
+        // document.documentElement.removeEventListener('touchend touchcancel', this.up, true);
+        // document.documentElement.removeEventListener('touchstart', this.up, true);
     },
 
     methods: {
         deselect() {
+            this.height = 600
             if (this.preventActiveBehavior) {
                 return
             }
@@ -237,6 +240,7 @@ export default {
         },
 
         up(ev) {
+            this.height = 30
             if (this.stickDrag) {
                 this.stickUp(ev);
             }
@@ -535,6 +539,7 @@ export default {
 
     computed: {
         style() {
+            console.log('this.height', this.height)
             return {
                 top: this.top + 'px',
                 left: this.left + 'px',
@@ -559,9 +564,9 @@ export default {
             return this.parentWidth - this.left - this.right;
         },
 
-        height() {
-            return this.parentHeight - this.top - this.bottom;
-        },
+        // height() {
+        //     return this.parentHeight - this.top - this.bottom;
+        // },
 
         rect() {
             return {
@@ -674,9 +679,9 @@ export default {
             this.aspectRatioCorrection();
         },
 
-        height() {
-            this.aspectRatioCorrection();
-        },
+        // height() {
+        //     this.aspectRatioCorrection();
+        // },
 
         active(isActive) {
             if (isActive) {
