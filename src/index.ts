@@ -1,6 +1,7 @@
 /********** 移动端 **********/
 import Picker from './components/picker';
 import PickerTime from './components/picker-time';
+import MobileTabs from './components/mobile-tabs';
 
 /********** 基础组件 **********/
 import Button from './components/button';
@@ -65,7 +66,8 @@ function install(Vue: any, opts = {}) {
 
     Vue.component('by-picker', Picker);
     Vue.component('by-picker-time', PickerTime);
-
+    Vue.component('by-mobile-tabs', MobileTabs);
+    
     Vue.component('by-button', Button);
     Vue.component('by-button-group', ButtonGroup);
 

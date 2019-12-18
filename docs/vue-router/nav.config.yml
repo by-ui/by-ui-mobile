@@ -21,6 +21,8 @@ components:
                         name: Picker
                       - title: pickerTime
                         name: PickerTime
+                      - title: mobileTabs
+                        name: mobileTabs
               - title: baseComponent
                 items:
                       - title: button

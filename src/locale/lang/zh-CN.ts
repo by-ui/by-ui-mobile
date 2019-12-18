@@ -31,6 +31,7 @@ export default {
             mobile: '移动组件',
             picker: 'Picker 弹窗',
             pickerTime: 'PickerTime 弹窗',
+            mobileTabs: 'MobileTabs 移动标签页',
 
             color: '色彩',
             font: '字体',

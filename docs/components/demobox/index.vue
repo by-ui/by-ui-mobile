@@ -73,7 +73,7 @@
     }
     .by-component__show {
         padding: 15px;
-        width: 320px;
+        width: 300px;
         border: 1px solid #eee;
     }
 </style>
