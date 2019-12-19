@@ -29,13 +29,17 @@
     export default class Components extends Vue {
         @Watch('$route')
         router(from: any) {
-            this.src = String(from.name)
+            this.src = String(this.$route.name).split('_')[1]
+            this.navs = navsConfig['c_' + this.$route.path.split('/')[1]];
         }
 
         private src: string = ''
-        navs = navsConfig.components;
+        navs = {}
         created() {
-            this.src = String(this.$route.name)
+
+            this.navs = navsConfig['c_' + this.$route.path.split('/')[1]];
+            this.src = String(this.$route.name).split('_')[1]
+            console.log(this.src)
         }
     }
 </script>

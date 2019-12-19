@@ -1,101 +1,41 @@
-guide:
-      - title: brand
-        name: guide
-        items:
-              - title: color
-                name: Color
-              - title: font
-                name: Typography
-components:
-      - title: summarize
-        name: components
-        items:
-              - title: introduce
-                name: introduction
-      - title: component
-        name: Components
-        groups:
-              - title: mobile
-                items:
-                      - title: picker
-                        name: Picker
-                      - title: pickerTime
-                        name: PickerTime
-                      - title: mobileTabs
-                        name: mobileTabs
-              - title: baseComponent
-                items:
-                      - title: button
-                        name: Button
-                      - title: layout
-                        name: Layout
-                      - title: tag
-                        name: Tag
-                      - title: icon
-                        name: Icon
-              - title: formComponent
-                items:
-                      - title: checkbox
-                        name: CheckBox
-                      - title: textarea
-                        name: Textarea
-                      - title: input
-                        name: Input
-                      - title: inputnumber
-                        name: InputNumber
-                      - title: radio
-                        name: Radio
-                      - title: rate
-                        name: Rate
-                      - title: select
-                        name: Select
-                      - title: switch
-                        name: Switch
-                      - title: slider
-                        name: Slider
-                      - title: form
-                        name: Form
-              - title: viewComponent
-                items:
-                      - title: alert
-                        name: Alert
-                      - title: badge
-                        name: Badge
-                      - title: card
-                        name: Card
-                      - title: collapse
-                        name: Collapse
-                      - title: loadingBar
-                        name: LoadingBar
-                      - title: modal
-                        name: Modal
-                      - title: message
-                        name: Message
-                      - title: notification
-                        name: Notification
-                      - title: popover
-                        name: Popover
-                      - title: progress
-                        name: Progress
-                      - title: timeline
-                        name: Timeline
-                      - title: tooltip
-                        name: Tooltip
-                      - title: table
-                        name: Table
-                      - title: drawer
-                        name: Drawer
-              - title: navComponent
-                items:
-                      - title: breadcrumb
-                        name: Breadcrumb
-                      - title: dropdown
-                        name: Dropdown
-                      - title: menu
-                        name: Menu
-                      - title: pagination
-                        name: Pagination
-                      - title: steps
-                        name: Steps
-                      - title: tabs
-                        name: Tabs
+g_guide:
+    - title: brand
+      name: guide
+      items:
+          - title: color
+            name: Color
+          - title: font
+            name: Typography
+c_shuren:
+    - title: summarize
+      name: shuren
+      items:
+          - title: introduce
+            name: introduction
+    - title: component
+      name: shuren
+      groups:
+          - title: mobile
+            items:
+                - title: picker
+                  name: Picker
+                - title: pickerTime
+                  name: PickerTime
+                - title: mobileTabs
+                  name: mobileTabs
+                - title: button
+                  name: button
+  
+c_lanxinka:
+    - title: summarize
+      name: lanxinka
+      items:
+          - title: introduce
+            name: introduction
+    - title: component
+      name: lanxinka
+      groups:
+          - title: mobile
+            items:
+                - title: button
+                  name: button

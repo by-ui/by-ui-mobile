@@ -7,10 +7,10 @@ export default {
                 {
                     title: '指南',
                     content: '了解设计指南，利用统一的规范进行设计帮助产品设计师、前端工程师快速搭建'
-                },{
+                }, {
                     title: '组件',
                     content: '通过组件的Demo体验交互细节，开发即可单独引用，也可使用全局方式引入组件'
-                },{
+                }, {
                     title: '资源',
                     content: '产品可直接用sketch工具快速搭建高保真产品原型，减少沟通成本'
                 }
@@ -19,7 +19,9 @@ export default {
         header: {
             adminSystem: '管理后台',
             component: '组件',
-            guide: '指南'
+            guide: '指南',
+            lanxinka: '蓝新卡',
+            shuren: '熟仁直聘',
         },
         color: {
             themeColor: '主色',

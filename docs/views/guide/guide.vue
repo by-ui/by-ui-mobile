@@ -21,6 +21,9 @@
     @Component
     export default class Guide extends Vue {
 
-        navs = navsConfig.guide;
+        navs = {};
+        created() {
+            this.navs = navsConfig['g_' + this.$route.path.split('/')[1]];
+        }
     }
 </script>
