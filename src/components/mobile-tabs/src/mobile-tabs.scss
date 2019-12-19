@@ -1,0 +1,32 @@
+$boder-color: rgba(221, 221, 221, 1);
+$act-color: rgba(252, 115, 1, 1);
+$def-color: rgba(0, 0, 0, 1);
+$mod-back: rgba(0, 0, 0, 0.4);
+
+.tab_list {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    padding: 5px 10px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .tab_list_item {
+        flex: 1;
+        margin: 0 5px;
+        font-size: 16px;
+        align-self: baseline;
+        flex-direction: row;
+        white-space: nowrap; //不换行
+    }
+    .line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2.5px;
+        background-color: $act-color;
+        transition: 0.3s;
+    }
+}

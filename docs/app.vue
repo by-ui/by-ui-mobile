@@ -20,25 +20,25 @@
             window.scrollTo(0, 0)
         }
         mounted() {
-            Scrollbar.use(OverscrollPlugin);
+            // Scrollbar.use(OverscrollPlugin);
 
-            (window as any).scrollbar = Scrollbar.init(document.body, {
-                // plugins: {
-                //     overscroll: {
-                        // effect: 'glow',
-                //         glowColor: '#6190E8',
-                //     }
-                // }
-            });
-            if (window.location.href.split('#').length == 3) {
-                let id = window.location.href.split('#')[2]
-                setTimeout(_ => {
-                    let offsetTop = (document.getElementById(id) as HTMLElement).offsetTop
-                    // window.scrollTo(0, offsetTop + 120)
-                    scrollbar.scrollTo(0,offsetTop + 120,800)
+            // (window as any).scrollbar = Scrollbar.init(document.body, {
+            //     // plugins: {
+            //     //     overscroll: {
+            //             // effect: 'glow',
+            //     //         glowColor: '#6190E8',
+            //     //     }
+            //     // }
+            // });
+            // if (window.location.href.split('#').length == 3) {
+            //     let id = window.location.href.split('#')[2]
+            //     setTimeout(_ => {
+            //         let offsetTop = (document.getElementById(id) as HTMLElement).offsetTop
+            //         // window.scrollTo(0, offsetTop + 120)
+            //         scrollbar.scrollTo(0,offsetTop + 120,800)
 
-                }, 300);
-            }
+            //     }, 300);
+            // }
         }
     }
 </script>

@@ -12,7 +12,7 @@ const options: RouterOptions = {
 const router = new VueRouter(options);
 router.beforeEach((to, from, next) => {
     next();
-    (window as any).scrollbar && (window as any).scrollbar.scrollTo(0, 0, 200)
+    // (window as any).scrollbar && (window as any).scrollbar.scrollTo(0, 0, 200)
 })
 
 export default router;

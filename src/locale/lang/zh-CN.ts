@@ -7,10 +7,10 @@ export default {
                 {
                     title: '指南',
                     content: '了解设计指南，利用统一的规范进行设计帮助产品设计师、前端工程师快速搭建'
-                },{
+                }, {
                     title: '组件',
                     content: '通过组件的Demo体验交互细节，开发即可单独引用，也可使用全局方式引入组件'
-                },{
+                }, {
                     title: '资源',
                     content: '产品可直接用sketch工具快速搭建高保真产品原型，减少沟通成本'
                 }
@@ -19,7 +19,9 @@ export default {
         header: {
             adminSystem: '管理后台',
             component: '组件',
-            guide: '指南'
+            guide: '指南',
+            lanxinka: '蓝新卡',
+            shuren: '熟仁直聘',
         },
         color: {
             themeColor: '主色',
@@ -28,6 +30,11 @@ export default {
             colorDesc: '统一的色彩搭配可以提高品牌的识别度，色彩的运用除了需要考虑品牌的统一性之外，还需要达到信息传递，交互反馈等目的。BY-UI 是BY实验室出品，品牌颜色为【BY蓝】，因此 BY-UI 的整体配色风格也是基于【BY蓝】展开的。',
         },
         nav: {
+            mobile: '移动组件',
+            picker: 'Picker 弹窗',
+            pickerTime: 'PickerTime 弹窗',
+            mobileTabs: 'MobileTabs 移动标签页',
+
             color: '色彩',
             font: '字体',
             brand: '品牌',

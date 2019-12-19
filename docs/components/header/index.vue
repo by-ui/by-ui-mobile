@@ -17,11 +17,16 @@
                                      v-text="$t('by.header.guide')"></router-link>
                     </li>
                     <li>
-                        <router-link to="/components"
-                                     v-text="$t('by.header.component')"></router-link>
+                        <router-link to="/shuren"
+                                     v-text="$t('by.header.shuren')"></router-link>
                     </li>
                     <li>
-                        <a href="https://by-ui.github.io/admin/" target="_blank"
+                        <router-link to="/lanxinka"
+                                     v-text="$t('by.header.lanxinka')"></router-link>
+                    </li>
+                    <li>
+                        <a href="https://by-ui.github.io/admin/"
+                           target="_blank"
                            v-text="$t('by.header.adminSystem')"></a>
                     </li>
                 </ul>
@@ -51,7 +56,7 @@
                 animTimingFunction: Vivus.EASE
             });
         }
-        switchLang(lang:string) {
+        switchLang(lang: string) {
             this.$i18n.locale = lang;
             this.$i18n.fallbackLocale
         }
