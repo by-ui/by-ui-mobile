@@ -34,6 +34,7 @@ export default {
             picker: 'Picker 弹窗',
             pickerTime: 'PickerTime 弹窗',
             mobileTabs: 'MobileTabs 移动标签页',
+            confim: 'Confim 确定弹窗',
 
             color: '色彩',
             font: '字体',

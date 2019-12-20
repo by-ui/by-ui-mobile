@@ -3,6 +3,8 @@ import Picker from './components/picker';
 import PickerTime from './components/picker-time';
 import MobileTabs from './components/mobile-tabs';
 
+import Confim from './components/confim';
+
 /********** 基础组件 **********/
 import Button from './components/button';
 import Tag from './components/tag';
@@ -125,6 +127,8 @@ function install(Vue: any, opts = {}) {
     Vue.prototype.$loadingBar = LoadingBar;
     Vue.prototype.$notify = Notification;
     Vue.prototype.$modal = Modal;
+
+    Vue.prototype.$confim = Confim;
 }
 
 /**

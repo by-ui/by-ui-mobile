@@ -6,7 +6,7 @@ const disabled = (fn?: any) => {
         }
         timeout = setTimeout(() => {
             fn()
-        }, 300);
+        }, 100);
     }
 }
 
