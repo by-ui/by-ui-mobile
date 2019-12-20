@@ -17,14 +17,15 @@ c_shuren:
       groups:
           - title: mobile
             items:
+                - title: button
+                  name: button
                 - title: picker
                   name: Picker
                 - title: pickerTime
                   name: PickerTime
                 - title: mobileTabs
                   name: mobileTabs
-                - title: button
-                  name: button
+                
   
 c_lanxinka:
     - title: summarize

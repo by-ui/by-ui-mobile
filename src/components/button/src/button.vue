@@ -1,108 +1,65 @@
 <template>
-    <button class="by-btn"
-            :class="[
-                type && `by-btn--${type}`,
-                size && `by-btn--${size}`,
-                plain && `by-btn--${type}--plain`,
-                circle && 'by-btn--circle',
-                round && 'by-btn--round',
-            ]"
-            :disabled="disabled"
-            @click="handleClick">
-        <i class="by-btn__icon icon"
-           :class="icon"
-           v-if="icon"></i>
-        <i class="by-btn__loading icon icon-loader"
-           v-if="loading"></i>
-        <span class="by-btn__text"
-              v-if="$slots.default">
-            <slot></slot>
-        </span>
+    <button class="s_button"
+            :class="[disabled&&'disabled']"
+            @click="actClick">
+        <slot></slot>
     </button>
 </template>
-<script lang="ts">
-    import { Vue, Component, Prop, PropSync, Watch } from "vue-property-decorator";
+<script lang='ts'>
+    import { Vue, Component, Watch, Prop } from 'vue-property-decorator';
+    import debounce from '@/utils/debounce'
 
-    @Component({
-        name: "ByButton",
-    })
-    export default class ByButton extends Vue {
-        /**
-         * 类型
-         * 可选值：default primary success error warning info text;
-         */
-        @Prop({
-            default: 'default'
-        })
-        type?: string;
+    @Component
+    export default class MyWallet extends Vue {
+        disabled: boolean = false
+        undebounce: boolean = false
 
-        /**
-         * 尺寸
-         * 可选值： large small smaller
-         */
-        @Prop()
-        size?: string;
+        created() {
+            if ('disabled' in this.$attrs) {
+                this.disabled = true
+            }
+            if ('undebounce' in this.$attrs) {
+                this.undebounce = true
+            }
+            //
+        }
 
-        /**
-         * 是否空心
-         * 可选值： true false
-         */
-        @Prop({
-            default: false,
-            type: Boolean
-        })
-        plain?: boolean;
-
-        /**
-         * 是否禁用
-         * 可选值： true false
-         */
-        @Prop({
-            default: false,
-            type: Boolean
-        })
-        disabled?: boolean;
-
-        /**
-         * 是否圆角
-         * 可选值： true false
-         */
-        @Prop({
-            default: false,
-            type: Boolean
-        })
-        round?: boolean;
-
-        /**
-         * 按钮是否圆形
-         */
-        @Prop({
-            default: false,
-            type: Boolean
-        })
-        circle?: boolean;
-
-        /**
-         * 图标 类名
-         */
-        @Prop()
-        icon?: string;
-
-        /**
-         * 加载图标
-         */
-        @Prop({
-            default: false,
-            type: Boolean
-        })
-        loading?: boolean;
-
-        handleClick (evt: any) {
-            this.$emit('click', evt)
+        actClick() {
+            if (this.disabled) {
+                return
+            }
+            if (!this.undebounce) {
+                debounce(() => this.$emit('click'))
+            } else {
+                this.$emit('click')
+            }
         }
     }
 </script>
-<style lang="scss" scoped>
-    .button {
+<style lang='scss' scoped>
+    .s_button {
+        padding: 0 10px;
+        margin: 0;
+        min-width: 70px;
+        line-height: 28px;
+        height: 28px;
+        text-align: center;
+        background: linear-gradient(
+            104deg,
+            rgba(254, 168, 92, 1) 0%,
+            rgba(244, 114, 45, 1) 100%
+        );
+        color: #fff;
+        font-size: 14px;
+        border-radius: 30px;
+        border: none;
+        outline: none;
+    }
+    .disabled {
+        background: linear-gradient(
+            104deg,
+            rgb(194, 194, 194) 0%,
+            rgb(98, 98, 98) 100%
+        );
     }
 </style>
