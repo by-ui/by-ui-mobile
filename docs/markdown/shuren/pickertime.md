@@ -17,7 +17,7 @@
         @confirm="(value)=>{pickdata1=value}"
         @cancel="(value)=>{pickdata1='点击取消'}"
     ></by-picker-time>
-    <by-button type="primary" @click="model1=true">打开picker</by-button>
+    <by-s-button type="primary" @click="model1=true">打开picker</by-s-button>
 </div>
 ```
 
@@ -35,7 +35,7 @@
         :start-time="'2018-3-2'"
         :end-time="'2019-3-9'"
     ></by-picker-time>
-    <by-button type="primary" @click="model2=true">打开picker</by-button>
+    <by-s-button type="primary" @click="model2=true">打开picker</by-s-button>
 </div>
 ```
 
@@ -56,7 +56,7 @@
         :default-time="'2018-3-5'"
         :end-time="'2030-3-9'"
     ></by-picker-time>
-    <by-button type="primary" @click="model3=true">打开picker</by-button>
+    <by-s-button type="primary" @click="model3=true">打开picker</by-s-button>
 </div>
 ```
 

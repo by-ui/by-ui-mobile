@@ -5,7 +5,6 @@ import MobileTabs from './components/mobile-tabs';
 
 /********** 基础组件 **********/
 import Button from './components/button';
-import ButtonGroup from './components/button-group';
 import Tag from './components/tag';
 import Icon from './components/icon';
 
@@ -68,8 +67,7 @@ function install(Vue: any, opts = {}) {
     Vue.component('by-picker-time', PickerTime);
     Vue.component('by-mobile-tabs', MobileTabs);
     
-    Vue.component('by-button', Button);
-    Vue.component('by-button-group', ButtonGroup);
+    Vue.component('by-s-button', Button);
 
     Vue.component('by-tag', Tag);
     Vue.component('by-icon', Icon);

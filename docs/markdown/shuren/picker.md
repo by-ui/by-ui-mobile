@@ -13,7 +13,7 @@
 
 <div class="row">
     <by-picker v-model="checkboxValue"></by-picker>
-    <by-button type="primary" @click="checkboxValue=true">打开picker</by-button>
+    <by-s-button type="primary" @click="checkboxValue=true">打开picker</by-s-button>
 </div>
 ```
 
@@ -28,8 +28,8 @@
 
 <div class="row">
     <by-picker v-model="checkboxValue1">picker-slot</by-picker>
-    <by-button type="primary" @click="checkboxValue1=true"
-        >打开picker</by-button
+    <by-s-button type="primary" @click="checkboxValue1=true"
+        >打开picker</by-s-button
     >
 </div>
 ```
@@ -45,8 +45,8 @@
 
 <div class="row">
     <by-picker v-model="checkboxValue2" :title="'title'"></by-picker>
-    <by-button type="primary" @click="checkboxValue2=true"
-        >打开picker</by-button
+    <by-s-button type="primary" @click="checkboxValue2=true"
+        >打开picker</by-s-button
     >
 </div>
 ```
@@ -68,8 +68,8 @@
         @cancel="()=>{text='点击了取消'}"
         >picker-slot</by-picker
     >
-    <by-button type="primary" @click="checkboxValue1=true"
-        >打开picker</by-button
+    <by-s-button type="primary" @click="checkboxValue1=true"
+        >打开picker</by-s-button
     >
 </div>
 ```
