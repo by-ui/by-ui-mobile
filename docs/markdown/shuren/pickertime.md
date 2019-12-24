@@ -30,16 +30,14 @@
 ```html
 <div class="row">
     <by-picker-time
-        :title="'时间选择'"
         v-model="model2"
+        :title="'时间选择'"
         :start-time="'2018-3-2'"
         :end-time="'2019-3-9'"
     ></by-picker-time>
     <by-s-button type="primary" @click="model2=true">打开picker</by-s-button>
 </div>
 ```
-
-:::
 
 :::
 
@@ -50,8 +48,8 @@
 ```html
 <div class="row">
     <by-picker-time
-        :title="'自定义TITLE'"
         v-model="model3"
+        :title="'自定义TITLE'"
         :start-time="'2010-3-2'"
         :default-time="'2018-3-5'"
         :end-time="'2030-3-9'"
