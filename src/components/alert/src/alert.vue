@@ -59,7 +59,7 @@
             this.bodyvisible = false
             setTimeout(() => {
                 this.visible = false
-            }, 400);
+            }, 200);
             this.onClose()
         }
     }
