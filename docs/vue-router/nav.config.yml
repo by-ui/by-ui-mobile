@@ -29,6 +29,8 @@ c_shuren:
                   name: rate
                 - title: confim
                   name: confim
+                - title: verificationCode
+                  name: verificationCode
 c_lanxinka:
     - title: summarize
       name: lanxinka

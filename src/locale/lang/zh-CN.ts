@@ -35,7 +35,8 @@ export default {
             pickerTime: 'PickerTime 弹窗',
             mobileTabs: 'MobileTabs 移动标签页',
             confim: 'Confim 确定弹窗',
-
+            verificationCode: 'verification-code 验证码输入框',
+            
             color: '色彩',
             font: '字体',
             brand: '品牌',

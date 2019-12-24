@@ -2,7 +2,7 @@
 import Picker from './components/picker';
 import PickerTime from './components/picker-time';
 import MobileTabs from './components/mobile-tabs';
-
+import verificationCode from './components/verification-code';
 import Confim from './components/confim';
 
 /********** 基础组件 **********/
@@ -68,8 +68,9 @@ function install(Vue: any, opts = {}) {
     Vue.component('by-picker', Picker);
     Vue.component('by-picker-time', PickerTime);
     Vue.component('by-mobile-tabs', MobileTabs);
-    
+
     Vue.component('by-s-button', Button);
+    Vue.component('by-verification-code', verificationCode);
 
     Vue.component('by-tag', Tag);
     Vue.component('by-icon', Icon);
