@@ -33,6 +33,9 @@ c_shuren:
                   name: confim
                 - title: verificationCode
                   name: verificationCode
+                - title: scrollBar
+                  name: scrollBar
+                  
 c_lanxinka:
     - title: summarize
       name: lanxinka
