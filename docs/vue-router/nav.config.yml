@@ -27,6 +27,8 @@ c_shuren:
                   name: mobileTabs
                 - title: rate
                   name: rate
+                - title: alert
+                  name: alert
                 - title: confim
                   name: confim
                 - title: verificationCode

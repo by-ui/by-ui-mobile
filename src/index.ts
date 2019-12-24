@@ -4,6 +4,7 @@ import PickerTime from './components/picker-time';
 import MobileTabs from './components/mobile-tabs';
 import verificationCode from './components/verification-code';
 import Confim from './components/confim';
+import Alert from './components/Alert';
 
 /********** 基础组件 **********/
 import Button from './components/button';
@@ -30,7 +31,6 @@ import OptionGroup from './components/select-option-group'
 
 /********** 视图组件 **********/
 import Badge from './components/badge';
-import Alert from './components/alert';
 import Collapse from './components/collapse';
 import CollapseItem from './components/collapse-Item';
 import Message from './components/message';
@@ -94,7 +94,6 @@ function install(Vue: any, opts = {}) {
     Vue.component('by-form-item', FormItem);
 
     Vue.component('by-badge', Badge);
-    Vue.component('by-alert', Alert);
     Vue.component('by-collapse', Collapse);
     Vue.component('by-collapse-item', CollapseItem);
     Vue.component('by-progress', Progress);
@@ -129,6 +128,7 @@ function install(Vue: any, opts = {}) {
     Vue.prototype.$notify = Notification;
     Vue.prototype.$modal = Modal;
 
+    Vue.prototype.$alert = Alert;
     Vue.prototype.$confim = Confim;
 }
 
