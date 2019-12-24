@@ -14,6 +14,24 @@
 
 :::
 
+### 自定义元素
+
+:::demo
+
+```html
+<div class="row">
+    <by-scroll-bar :parent="par" :element="ele"></by-scroll-bar>
+
+    <div class="over" ref="parent">
+        <div class="max" ref="element"></div>
+    </div>
+</div>
+
+<div class="max"></div>
+```
+
+:::
+
 ## Button 参数
 
 | 参数       | 说明         | 类型    | 可选值 | 默认值 |
@@ -26,30 +44,31 @@
     import { Vue, Component, Watch, Prop } from 'vue-property-decorator';
     @Component
     export default class MyWallet extends Vue {
-       test = 0
-       test2 = 0
+       private ele:any={}
+       private par:any={}
+
+       mounted(){
+           this.ele = this.$refs.element
+           this.par = this.$refs.parent
+           console.log(this.$refs)
+       }
     }
 </script>
 
 <style lang="scss" scoped>
     .row {
-        height:120vh;
         display:flex;
-        button{
-            margin-top:8px;
-            margin-left:8px;
-        }
 
-        & + .row {
-            margin-top: 20px;
-        }
-        .by-btn-group .by-btn {
-            margin-left: 0;
-        }
     }
 
-    .by-btn-group {
-        margin-left: 8px;
-        margin-top: 16px;
+    .over{
+        width:100%;
+        height:200px;
+        overflow:auto;
+        background-color:#eee;
+    }
+    .max {
+
+        height:250vh;
     }
 </style>
