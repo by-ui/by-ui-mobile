@@ -204,6 +204,13 @@
                 S = this.Day.start
             }
 
+            // 设置默认结束时间
+            if (this.Month.array.indexOf(this.Month.default) == 1) {
+                E = this.Day.end || this.isLeapYear(this.Year.array[this.Year.array.indexOf(this.Year.default)]) ? 29 : 28
+            } else {
+                E = this.Day.end || 31
+            }
+
             if (this.Year.array.indexOf(this.Year.default) === this.Year.array.length - 1 &&
                 this.Month.array.indexOf(this.Month.default) === this.Month.array.length - 1) {
                 E = this.Day.end || 31
